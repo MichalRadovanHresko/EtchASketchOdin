@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
-const makeGrid = (n = 256) => {
-  for (let i = 1; i <= n; i++) {
+const makeGrid = (n = 16) => {
+  if (n > 100) alert("Choose a smaller number");
+  for (let i = 1; i <= n ** 2; i++) {
     let box = document.createElement("div");
     box.textContent = `Box ${i}`;
     box.classList.add("box");
@@ -12,19 +13,19 @@ const makeGrid = (n = 256) => {
   }
 };
 makeGrid();
-const sqrs = document.querySelectorAll(".box");
 
 // buttons
 const resBtn = document.getElementById("res");
 const inp = document.getElementById("input");
 
 resBtn.addEventListener("click", () =>
-  sqrs.forEach((sqr) => (sqr.style.backgroundColor = "white")),
+  document
+    .querySelectorAll(".box")
+    .forEach((sqr) => (sqr.style.backgroundColor = "white")),
 );
 
-let result = 0;
 inp.addEventListener("click", () => {
-  result = prompt("Tell us how many squares per side you want: ");
+  let result = Number(prompt("Tell us how many squares per side you want: "));
   if (document.querySelectorAll(".box")) {
     let previous = document.querySelectorAll(".box");
     previous.forEach((el) => el.remove());
