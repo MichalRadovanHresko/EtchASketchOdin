@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.btns {
+    display: flex;
+    gap: 5px;
+}
+.container {
+    display: flex;
+    width: 100%;
+    gap: 2px;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    padding: 5px;
+    justify-content: center;
+}
+
+.box {
+    border: solid black 1px;
+    padding: 1vw;
+    flex: 1 0 2%;
+    text-align: center;
+}
