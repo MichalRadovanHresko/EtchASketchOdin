@@ -29,7 +29,7 @@ resBtn.addEventListener("click", () =>
 );
 
 inp.addEventListener("click", () => {
-  let result = Number(prompt("Tell us how many squares per side you want: "));
+  let result = Number(prompt("Enter a grid size: "));
   if (document.querySelectorAll(".box")) {
     let previous = document.querySelectorAll(".box");
     previous.forEach((el) => el.remove());
