@@ -1,9 +1,13 @@
 const container = document.querySelector(".container");
 const makeGrid = (n = 16) => {
   if (n > 100) alert("Choose a smaller number");
+  const boxSize = 960 / n;
+  console.log(boxSize);
   for (let i = 1; i <= n ** 2; i++) {
     let box = document.createElement("div");
     box.textContent = `Box ${i}`;
+    box.style.width = `${boxSize}px`;
+    box.style.height = `${boxSize}px`;
     box.classList.add("box");
     box.addEventListener(
       "mouseover",
