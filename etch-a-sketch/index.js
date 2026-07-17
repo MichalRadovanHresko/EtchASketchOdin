@@ -7,10 +7,13 @@ const makeGrid = (n = 16) => {
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
     box.classList.add("box");
-    box.addEventListener(
-      "mouseover",
-      () => (box.style.backgroundColor = "red"),
-    );
+    box.addEventListener("mouseover", () => {
+      const red = Math.floor(Math.random() * 255);
+      const green = Math.floor(Math.random() * 255);
+      const blue = Math.floor(Math.random() * 255);
+
+      box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    });
     container.appendChild(box);
   }
 };
